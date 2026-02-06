@@ -159,4 +159,4 @@ This tool provides estimates only. Always verify important information through t
 
 ## 📄 License
 
-MIT
+Apache License 2.0
