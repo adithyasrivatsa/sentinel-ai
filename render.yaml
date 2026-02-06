@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: sentinel-backend
+    env: python
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: API_SECRET_KEY
+        generateValue: true
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: sentinel-redis
+          property: connectionString
+    healthCheckPath: /health
+
+  - type: redis
+    name: sentinel-redis
+    ipAllowList: []
+    plan: starter
+
+  - type: web
+    name: sentinel-frontend
+    env: static
+    buildCommand: "echo 'Static site ready'"
+    staticPublishPath: ./frontend
+    routes:
+      - type: rewrite
+        source: /api/*
+        destination: https://sentinel-backend.onrender.com/api/*
