@@ -39,7 +39,7 @@ You'll need two free API keys:
 git init
 git add .
 git commit -m "Initial commit"
-git remote add origin YOUR_GITHUB_URL
+git remote add origin https://github.com/adithyasrivatsa/sentinel-ai/
 git push -u origin main
 
 # 2. Go to render.com → New → Blueprint
