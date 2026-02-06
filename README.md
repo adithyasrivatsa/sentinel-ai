@@ -25,7 +25,14 @@ Check if content is AI-generated or a scam. Works as a Progressive Web App (PWA)
 
 ## 🚀 Quick Deploy (5 minutes)
 
-### Fastest: Render (Free)
+### Step 1: Get API Keys (Free)
+
+You'll need two free API keys:
+
+1. **Gemini API** (Google): https://makersuite.google.com/app/apikey
+2. **AssemblyAI**: https://www.assemblyai.com/dashboard/signup
+
+### Step 2: Fastest - Render (Free)
 
 ```bash
 # 1. Push to GitHub
